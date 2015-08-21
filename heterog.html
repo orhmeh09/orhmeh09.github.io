@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+<meta name="date" content="2015-08-21" />
+
+<title>Heterogeneity of Responses</title>
+
+<script src="heterog_files/jquery-1.11.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="heterog_files/bootstrap-3.3.1/css/spacelab.min.css" rel="stylesheet" />
+<script src="heterog_files/bootstrap-3.3.1/js/bootstrap.min.js"></script>
+<script src="heterog_files/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
+<script src="heterog_files/bootstrap-3.3.1/shim/respond.min.js"></script>
+<script src="heterog_files/htmlwidgets-0.5/htmlwidgets.js"></script>
+<script src="heterog_files/datatables-binding-0.1/datatables.js"></script>
+<script src="heterog_files/datatables-1.10.7/jquery.dataTables.min.js"></script>
+<link href="heterog_files/datatables-default-1.10.7/dataTables.extra.css" rel="stylesheet" />
+<link href="heterog_files/datatables-default-1.10.7/jquery.dataTables.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<link rel="stylesheet"
+      href="heterog_files/highlight/default.css"
+      type="text/css" />
+<script src="heterog_files/highlight/highlight.js"></script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
+</style>
+<div class="container-fluid main-container">
+
+
+<div id="header">
+<h1 class="title">Heterogeneity of Responses</h1>
+<h4 class="date"><em>August 21, 2015</em></h4>
+</div>
+
+<div id="TOC">
+<ul>
+<li><a href="#heterogeneity-of-responses">Heterogeneity of responses</a><ul>
+<li><a href="#descriptives">Descriptives</a></li>
+<li><a href="#individual-values">Individual values</a></li>
+<li><a href="#anova">ANOVA</a></li>
+</ul></li>
+</ul>
+</div>
+
+<p><a href="overview.html">Back to Overview</a></p>
+<div id="heterogeneity-of-responses" class="section level2">
+<h2>Heterogeneity of responses</h2>
+<p>As per De Deyne, Navarro, and Storms, 2013. Values filtered from blank &amp; idiosyncratic.</p>
+<div id="descriptives" class="section level3">
+<h3>Descriptives</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">onl</th>
+<th align="right">tem</th>
+<th align="right">umi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">nbr.val</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+<td align="right">100.00</td>
+</tr>
+<tr class="even">
+<td align="left">nbr.null</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="odd">
+<td align="left">nbr.na</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+</tr>
+<tr class="even">
+<td align="left">min</td>
+<td align="right">0.71</td>
+<td align="right">0.88</td>
+<td align="right">1.09</td>
+</tr>
+<tr class="odd">
+<td align="left">max</td>
+<td align="right">2.73</td>
+<td align="right">3.80</td>
+<td align="right">3.94</td>
+</tr>
+<tr class="even">
+<td align="left">range</td>
+<td align="right">2.02</td>
+<td align="right">2.92</td>
+<td align="right">2.85</td>
+</tr>
+<tr class="odd">
+<td align="left">sum</td>
+<td align="right">194.56</td>
+<td align="right">265.78</td>
+<td align="right">249.86</td>
+</tr>
+<tr class="even">
+<td align="left">median</td>
+<td align="right">1.96</td>
+<td align="right">2.67</td>
+<td align="right">2.63</td>
+</tr>
+<tr class="odd">
+<td align="left">mean</td>
+<td align="right">1.95</td>
+<td align="right">2.66</td>
+<td align="right">2.50</td>
+</tr>
+<tr class="even">
+<td align="left">SE.mean</td>
+<td align="right">0.04</td>
+<td align="right">0.06</td>
+<td align="right">0.06</td>
+</tr>
+<tr class="odd">
+<td align="left">CI.mean</td>
+<td align="right">0.08</td>
+<td align="right">0.11</td>
+<td align="right">0.11</td>
+</tr>
+<tr class="even">
+<td align="left">var</td>
+<td align="right">0.17</td>
+<td align="right">0.33</td>
+<td align="right">0.31</td>
+</tr>
+<tr class="odd">
+<td align="left">std.dev</td>
+<td align="right">0.41</td>
+<td align="right">0.57</td>
+<td align="right">0.56</td>
+</tr>
+<tr class="even">
+<td align="left">coef.var</td>
+<td align="right">0.21</td>
+<td align="right">0.21</td>
+<td align="right">0.22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="individual-values" class="section level3">
+<h3>Individual values</h3>
+<p><div id="htmlwidget-6303" style="width:100%;height:auto;" class="datatables"></div>
+<script type="application/json" data-for="htmlwidget-6303">{"x":{"data":[["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59","60","61","62","63","64","65","66","67","68","69","70","71","72","73","74","75","76","77","78","79","80","81","82","83","84","85","86","87","88","89","90","91","92","93","94","95","96","97","98","99","100"],["açlık","alıntı","altın","asker","atom","avuç","ayıp","bacak","balık","barınak","başıboş","belge","bilişim","boğa","büro","çehre","cevap","çömlek","delik","dinamik","dizgin","duygulu","elem","erozyon","esinti","eşya","ev","geçerlik","gelin","gıcırtı","giysi","gülüş","hasar","hata","hayat","hayvan","haz","hırçınlık","hoşnut","hukuk","hüzün","iğde","imza","inanç","iyilik","kapı","kas","katil","kayıp","kırmızı","külhan","kuş","lezzet","medya","meraklı","metal","mineral","müftülük","nezle","oksijen","övgü","özet","özlem","papatya","para","parke","paslı","pencere","peşinatsız","pire","pomat","radyo","sadık","sazlık","semer","serin","şiddetli","sofra","soğan","solo","standart","suç","süresiz","tabanca","takoz","tane","tanıtım","televizyon","toz","uçak","vali","vatan","virüs","yama","yarış","yatsı","yeni","yoga","yüzük","zaman"],[1.92,2.29,2.52,2.36,2.73,1.24,1.9,2.45,1.98,2,2.53,2.47,1.93,2.18,1.83,1.6,1.09,1.57,1.86,2.27,1.24,2.45,1.73,1.46,1,1.56,1.75,1.07,1.97,0.71,1.94,2.19,2.04,1.49,2.22,2.34,2.39,2.03,1.85,2.11,2.59,1.8,1.97,1.67,2.16,2.71,1.86,2.23,1.69,2.11,1.72,2.6,1.36,1.69,2.29,2.48,1.94,1.6,2.27,2.32,2.05,1.94,1.77,1.69,2.25,2.19,1.8,2.14,1.79,2.13,2.22,2.34,2.1,2.3,1.42,1.63,2.16,1.94,2.03,2.45,2.52,1.28,2.03,1.95,1.59,1.9,1.76,2.3,2.45,2.14,2.17,1.44,1.87,1.55,1.32,1,2.08,1.81,1.92,1.82],[2.78,2.93,3.04,3.31,2.98,1.85,3.22,3.8,3.02,2.45,2.5,2.65,2.65,2.64,2.51,2.14,1.6,2.35,2.77,2.87,1.18,3.18,1.86,1.66,2.5,2.43,2.59,1.87,2.56,1.63,3.13,3.05,2.55,2.6,2.97,2.45,2.09,2.85,2.26,3.39,2.82,2.09,3.6,2.35,3.01,3.63,3.64,2.88,3.05,2.96,2.22,3.31,1.85,2.42,3.73,3.18,2.74,2.24,2.58,2.74,3.04,2.45,3.27,2.85,2.8,3.25,2.11,2.55,1.85,2.61,2.69,2.23,2.7,3.3,1.26,3.5,3.46,1.96,2.19,2.78,3.38,2,2.29,2.49,2.77,2.87,2.85,3.34,3.12,3.25,2.49,2.56,2.11,3.15,3.37,0.88,2.62,2.89,2.36,2.24],[2.77,2.84,3.24,2.49,3.31,1.55,2.82,2.96,2.82,1.98,3.18,3.05,2.2,2.87,2.37,1.52,1.09,2.9,2.66,2.66,1.48,2.83,1.7,1.89,1.12,2.95,3.12,1.73,2.24,1.5,2.55,2.91,2.31,1.75,2.56,2.36,2.45,3.25,1.92,2.8,3.09,1.9,2.81,1.95,2.7,3.94,2.84,2.98,2.85,2.8,1.68,2.93,1.52,2.64,2.79,2.61,2.28,1.95,2.76,2.43,2.33,2.65,2.63,2.76,3.26,2.9,2.13,2.55,2.84,2.86,1.35,2.87,3.15,2.59,1.22,2.07,3.05,2.29,2.45,2.91,3.07,1.53,2.68,2.86,2.57,2.29,2.24,2.69,3.37,3.29,2.91,2.38,2.06,2.61,2.37,1.72,2.28,2.63,2.45,2.85]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> </th>\n      <th>Target</th>\n      <th>onl</th>\n      <th>tem</th>\n      <th>umi</th>\n    </tr>\n  </thead>\n</table>","options":{"columnDefs":[{"className":"dt-right","targets":[2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false},"callback":null,"filter":"none"},"evals":[]}</script></p>
+</div>
+<div id="anova" class="section level3">
+<h3>ANOVA</h3>
+<pre><code>## H ~ Label</code></pre>
+<pre><code>##              Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## Label         2  27.95  13.973   52.02 &lt;2e-16 ***
+## Residuals   297  79.78   0.269                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p><a href="overview.html">Back to Overview</a></p>
+</div>
+</div>
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+$(document).ready(function () {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+});
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
